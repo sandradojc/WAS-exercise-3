@@ -1,0 +1,87 @@
+[
+	{
+		"httpRequest": {
+			"method": "GET",
+			"path": "/api/tractors/1/moisture",
+            "body": "[0,0,1,1]"
+		},
+		"httpResponse": {
+			"statusCode": 200,
+			"headers": {
+				"Content-Type": [ "application/json" ]
+			},
+			"body": "70",
+            "delay": {
+                "timeUnit": "MILLISECONDS",
+                "value": 2000
+            }
+		}
+	},
+    {
+		"httpRequest": {
+			"method": "GET",
+			"path": "/api/tractors/1/moisture",
+            "body": "[1,0,2,1]"
+		},
+		"httpResponse": {
+			"statusCode": 200,
+			"headers": {
+				"Content-Type": [ "application/json" ]
+			},
+			"body": "125",
+            "delay": {
+                "timeUnit": "MILLISECONDS",
+                "value": 2000
+            }
+		}
+	},
+    {
+		"httpRequest": {
+			"method": "GET",
+			"path": "/api/tractors/1/moisture",
+            "body": "[0,1,1,2]"
+		},
+		"httpResponse": {
+			"statusCode": 200,
+			"headers": {
+				"Content-Type": [ "application/json" ]
+			},
+			"body": "70",
+            "delay": {
+                "timeUnit": "MILLISECONDS",
+                "value": 2000
+            }
+		}
+	},
+    {
+		"httpRequest": {
+			"method": "GET",
+			"path": "/api/tractors/1/moisture",
+            "body": "[1,1,2,2]"
+		},
+		"httpResponse": {
+			"statusCode": 200,
+			"headers": {
+				"Content-Type": [ "application/json" ]
+			},
+			"body": "125",
+            "delay": {
+                "timeUnit": "MILLISECONDS",
+                "value": 2000
+            }
+		}
+	},
+    {
+		"httpRequest": {
+			"method": "PUT",
+			"path": "/api/tractors/2/sprayer"
+		},
+		"httpResponse": {
+			"statusCode": 200,
+            "delay": {
+                "timeUnit": "MILLISECONDS",
+                "value": 2000
+            }
+		}
+	}
+]

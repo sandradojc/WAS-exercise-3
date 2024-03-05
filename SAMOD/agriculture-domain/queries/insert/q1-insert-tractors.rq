@@ -1,0 +1,64 @@
+PREFIX was: <https://was-course.interactions.ics.unisg.ch/farm-ontology#>
+PREFIX hmas: <https://purl.org/hmas/>
+PREFIX td: <https://www.w3.org/2019/wot/td#>
+PREFIX wotsec: <https://www.w3.org/2019/wot/security#>
+PREFIX htv: <http://www.w3.org/2011/http#>
+PREFIX hctl: <https://www.w3.org/2019/wot/hypermedia#>
+PREFIX js: <https://www.w3.org/2019/wot/json-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+INSERT {
+    GRAPH <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-danai#>
+    {
+        ?farm hmas:contains ?newTractor1.
+        ?farm hmas:contains ?newTractor2.
+        ?newTractor1 a td:Thing, was:Tractor;
+  			td:title "A tractor that can be used for monitoring the moisture level of soil in a farm.";
+  			td:hasSecurityConfiguration [ a wotsec:NoSecurityScheme];
+  			td:hasBase <http://localhost:1080/api/tractors/1/>;
+  			td:hasActionAffordance [ a td:ActionAffordance, was:ReadSoilMoistureAffordance;
+      		td:name "Read Moisture Level";
+      		td:hasForm [
+          		htv:methodName "GET";
+          		hctl:hasTarget <http://localhost:1080/api/tractors/1/moisture>;
+          		hctl:forContentType "application/json";
+          		hctl:hasOperationType td:invokeAction
+        	];
+      		td:hasInputSchema [ a js:ArraySchema, was:Coordinates;
+          		js:minItems "4"^^xsd:int;
+          		js:maxItems "4"^^xsd:int;
+          		js:items [ a js:IntegerSchema;
+              		js:minimum "0"^^xsd:int;
+              		js:maximum "2"^^xsd:int
+            	]
+        	];
+      		td:hasOutputSchema [ a js:IntegerSchema, was:SoilMoisture ]
+    	] .
+        
+        ?newTractor2 a td:Thing, was:Tractor;
+  			td:title "A tractor that can be used for irrigating sections in a farm.";
+  			td:hasSecurityConfiguration [ a wotsec:NoSecurityScheme ];
+  			td:hasBase <http://localhost:1080/api/tractors/2/>;
+  			td:hasActionAffordance [ a td:ActionAffordance, was:IrrigateAffordance;
+      		td:name "Irrigate";
+      		td:hasForm [
+          		htv:methodName "PUT";
+          		hctl:hasTarget <http://localhost:1080/api/tractors/2/sprayer>;
+          		hctl:forContentType "application/json";
+          		hctl:hasOperationType td:invokeAction
+        	];
+      		td:hasInputSchema [ a js:ArraySchema, was:Coordinates;
+          		js:minItems "4"^^xsd:int;
+          		js:maxItems "4"^^xsd:int;
+          		js:items [ a js:IntegerSchema;
+              		js:minimum "0"^^xsd:int;
+              		js:maximum "2"^^xsd:int
+            	]
+        	]
+    	] .
+    }.
+} WHERE {
+	?farm a was:Farm.
+  	BIND(IRI(CONCAT("https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-danai#tractor-", strUUID())) AS ?newTractor1)
+  	BIND(IRI(CONCAT("https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-danai#tractor-", strUUID())) AS ?newTractor2)
+}
