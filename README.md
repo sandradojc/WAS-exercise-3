@@ -1,7 +1,7 @@
 # Exercise 3: Web Ontologies and Knowledge Graphs
 This repository contains:
 - A partial implementation of a Web ontology for the domain of Agriculture based on the [SAMOD methodology](https://essepuntato.it/samod/). 
-- A partial implementation of a [JaCaMo](https://github.com/jacamo-lang/jacamo) application, in which autonomous agents are able to query a knowledge graph
+- A partial implementation of a [JaCaMo](https://jacamo-lang.github.io/) application, in which autonomous agents are able to query a knowledge graph
 to retrieve knowledge about the world — and to use that knowledge to manage a farm.
 
 ## Table of Contents
