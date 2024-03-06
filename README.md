@@ -58,11 +58,12 @@ to retrieve knowledge about the world — and to use that knowledge to manage a 
     - TIP: The [queries/select](SAMOD/agriculture-domain/queries/select) directory contains example SELECT queries that formalize the first 3 competency questions 
 
 ### Task 2.3
+- Modify the template to use your GraphDB credentials and repository name in the Java class [`FarmKG`](src/env/farm/FarmKG.java), and the agent programs [`moisture_detector.asl`](src/agt/moisture_detector.asl), [`irrigator.asl`](src/agt/irrigator.asl)
 - Complete the methods of the Java class [`FarmKG`](src/env/farm/FarmKG.java) that enable autonomous agents to query your GraphDB repository through a JaCaMo application:
-- `queryFarmSections()`
-- `querySectionCoordinates()`
-- `queryCropOfSection()`
-- `queryRequiredMoisture()`
+  - `queryFarmSections()`
+  - `querySectionCoordinates()`
+  - `queryCropOfSection()`
+  - `queryRequiredMoisture()`
 - TIPS:
   - Use your SPARQL SELECT queries from Task 2.2 that formalize the competency questions q4, q5, q6, and q7.
   - The class [`FarmKG`](src/env/farm/FarmKG.java) contains the full implementation of the example methods `queryFarm()` and `queryThing()`
