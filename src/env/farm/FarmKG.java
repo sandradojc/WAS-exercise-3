@@ -4,16 +4,9 @@ import cartago.Artifact;
 import cartago.OPERATION;
 import cartago.OpFeedbackParam;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -51,7 +44,7 @@ public class FarmKG extends Artifact {
         String farmVariableName = "farm";
 
         // constructs query
-        String queryStr = PREFIXES + "SELECT ?farm WHERE { ?" + farmVariableName + " a was:Farm. }";
+        String queryStr = PREFIXES + "SELECT ?" + farmVariableName + " WHERE { ?" + farmVariableName + " a was:Farm. }";
 
         /* Example SPARQL query 
          * PREFIX was: <https://was-course.interactions.ics.unisg.ch/farm-ontology#>
