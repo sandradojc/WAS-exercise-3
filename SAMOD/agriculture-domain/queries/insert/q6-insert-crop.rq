@@ -1,0 +1,37 @@
+PREFIX was: <https://was-course.interactions.ics.unisg.ch/farm-ontology#>
+PREFIX hmas: <https://purl.org/hmas/>
+PREFIX td: <https://www.w3.org/2019/wot/td#>
+
+INSERT DATA {
+    GRAPH <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#> {
+
+        <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#farm> was:hasLandSection <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section1>.
+        <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#farm> was:hasLandSection <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section2>.
+        <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#farm> was:hasLandSection <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section3>.
+        <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#farm> was:hasLandSection <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section4>.
+
+        <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section1> hmas:contains <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop1>.
+        <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop1> a td:Thing, was:Crop, was:Wheat;
+            td:title "Section 1 has the crop of type wheat.";
+            td:hasrequiredSoilMoisture "120".
+        <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section1> was:hasCropType <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop1>.
+
+        <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section2> hmas:contains <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop2>.
+        <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop2> a td:Thing, was:Crop, was:Wheat;
+            td:title "Section 2 has the crop of type wheat.";
+            td:hasrequiredSoilMoisture "120".
+        <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section2> was:hasCropType <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop2>.
+
+        <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section3> hmas:contains <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop3>.
+        <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop3> a td:Thing, was:Crop, was:Corn;
+            td:title "Section 3 has the crop of type corn.";
+            td:hasrequiredSoilMoisture "80".
+        <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section3> was:hasCropType <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop3>.
+
+        <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section4> hmas:contains <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop4>.
+        <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop4> a td:Thing, was:Crop, was:Corn;
+            td:title "Section 4 has the crop of type corn.";
+            td:hasrequiredSoilMoisture "80".
+        <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section4> was:hasCropType <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop4>.
+    }
+}

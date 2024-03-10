@@ -2,14 +2,11 @@ PREFIX was: <https://was-course.interactions.ics.unisg.ch/farm-ontology#>
 PREFIX hmas: <https://purl.org/hmas/>
 PREFIX td: <https://www.w3.org/2019/wot/td#>
 
-SELECT ?td WHERE {
+SELECT ?LandSection WHERE {
 GRAPH <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#> {
    bind (<https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#farm-c3cecd1b-d37e-4ba5-8fe4-03defcf96f03> as ?farm)
    ?farm a was:Farm.
-   ?farm hmas:contains ?tractor.
-   ?tractor a was:Tractor. 
-   ?tractor td:hasActionAffordance ?aff.
-   ?tractor hmas:hasProfile ?td.
-   ?aff a was:IrrigateAffordance. 
+   ?farm hmas:contains ?LandSection.
+   ?LandSection a was:LandSection.
  }
 }

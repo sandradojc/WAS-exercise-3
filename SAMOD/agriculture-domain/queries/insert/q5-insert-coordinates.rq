@@ -1,0 +1,40 @@
+PREFIX was: <https://was-course.interactions.ics.unisg.ch/farm-ontology#>
+PREFIX hmas: <https://purl.org/hmas/>
+PREFIX td: <https://www.w3.org/2019/wot/td#>
+PREFIX wotsec: <https://www.w3.org/2019/wot/security#>
+PREFIX htv: <http://www.w3.org/2011/http#>
+PREFIX hctl: <https://www.w3.org/2019/wot/hypermedia#>
+PREFIX js: <https://www.w3.org/2019/wot/json-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+INSERT {
+    GRAPH <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#>
+    {
+        <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section1> hmas:contains ?coordinates1.
+        ?coordinates1 a td:Thing, was:Coordinates;
+            td:title "Coordinates of section 1";
+            td:hasCoordinates "0,0,1,1";
+        .
+        <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section2> hmas:contains ?coordinates2.
+        ?coordinates2 a td:Thing, was:Coordinates;
+            td:title "Coordinates of section 2";
+            td:hasCoordinates "1,0,2,1";
+        .
+        <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section3> hmas:contains ?coordinates3.
+        ?coordinates3 a td:Thing, was:Coordinates;
+            td:title "Coordinates of section 3";
+            td:hasCoordinates "0,1,1,2";
+        .
+        <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section4> hmas:contains ?coordinates4.
+        ?coordinates4 a td:Thing, was:Coordinates;
+            td:title "Coordinates of section 4";
+            td:hasCoordinates "1,1,2,2";
+        .
+    }.
+} WHERE {
+    BIND(IRI("https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#coordinates1") AS ?coordinates1)
+    BIND(IRI("https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#coordinates2") AS ?coordinates2)
+    BIND(IRI("https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#coordinates3") AS ?coordinates3)
+    BIND(IRI("https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#coordinates4") AS ?coordinates4)
+}
+

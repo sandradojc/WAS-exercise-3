@@ -1,0 +1,9 @@
+PREFIX was: <https://was-course.interactions.ics.unisg.ch/farm-ontology#>
+PREFIX hmas: <https://purl.org/hmas/>
+PREFIX td: <https://www.w3.org/2019/wot/td#>
+
+SELECT ?RequiredSoilMoisture WHERE {
+  GRAPH <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#> {
+    <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section1> was:hasCropType/td:hasrequiredSoilMoisture ?RequiredSoilMoisture.
+  }
+}

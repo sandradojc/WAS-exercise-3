@@ -1,0 +1,12 @@
+PREFIX was: <https://was-course.interactions.ics.unisg.ch/farm-ontology#>
+PREFIX hmas: <https://purl.org/hmas/>
+PREFIX td: <https://www.w3.org/2019/wot/td#>
+
+SELECT ?Coordinates WHERE {
+  GRAPH <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#> {
+    bind (<https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#farm-c3cecd1b-d37e-4ba5-8fe4-03defcf96f03> as ?farm)
+    ?farm hmas:contains <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section1>.
+    <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section1> hmas:contains ?coordinatesEntity.
+    ?coordinatesEntity td:hasCoordinates ?Coordinates
+  }
+}

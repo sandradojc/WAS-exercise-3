@@ -1,0 +1,159 @@
+@prefix : <https://was-course.interactions.ics.unisg.ch/farm-ontology#> .
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix hmas: <https://purl.org/hmas/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix td: <https://www.w3.org/2019/wot/td#> .
+@prefix path: <http://www.ontotext.com/path#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix rdf4j: <http://rdf4j.org/schema/rdf4j#> .
+
+<https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section1>
+  a td:Thing, :LandSection;
+  :hasCropType <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop1>;
+  hmas:contains <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#coordinates1>,
+    <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop1>;
+  td:title "Land section 1 of farm" .
+
+<https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section2>
+  a td:Thing, :LandSection;
+  :hasCropType <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop2>;
+  hmas:contains <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#coordinates2>,
+    <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop2>;
+  td:title "Land section 2 of farm" .
+
+<https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section3>
+  a td:Thing, :LandSection;
+  :hasCropType <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop3>;
+  hmas:contains <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#coordinates3>,
+    <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop3>;
+  td:title "Land section 3 of farm" .
+
+<https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section4>
+  a td:Thing, :LandSection;
+  :hasCropType <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop4>;
+  hmas:contains <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#coordinates4>,
+    <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop4>;
+  td:title "Land section 4 of farm" .
+
+<https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#coordinates1>
+  a :Coordinates, td:Thing;
+  td:title "Coordinates of section 1";
+  td:hasCoordinates "0,0,1,1" .
+
+<https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#coordinates2>
+  a :Coordinates, td:Thing;
+  td:title "Coordinates of section 2";
+  td:hasCoordinates "1,0,2,1" .
+
+<https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#coordinates3>
+  a :Coordinates, td:Thing;
+  td:title "Coordinates of section 3";
+  td:hasCoordinates "0,1,1,2" .
+
+<https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#coordinates4>
+  a :Coordinates, td:Thing;
+  td:title "Coordinates of section 4";
+  td:hasCoordinates "1,1,2,2" .
+
+<https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop1> a
+    :Crop, :Wheat, td:Thing;
+  td:title "Section 1 has the crop of type wheat.";
+  td:hasrequiredSoilMoisture "120" .
+
+<https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop2> a
+    :Crop, :Wheat, td:Thing;
+  td:title "Section 2 has the crop of type wheat.";
+  td:hasrequiredSoilMoisture "120" .
+
+<https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop3> a
+    :Crop, :Corn, td:Thing;
+  td:title "Section 3 has the crop of type corn.";
+  td:hasrequiredSoilMoisture "80" .
+
+<https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#crop4> a
+    :Crop, :Corn, td:Thing;
+  td:title "Section 4 has the crop of type corn.";
+  td:hasrequiredSoilMoisture "80" .
+
+<https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#farm-c3cecd1b-d37e-4ba5-8fe4-03defcf96f03>
+  a :Farm;
+  hmas:contains <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section1>,
+    <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section2>,
+    <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section3>,
+    <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section4>,
+    <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#tractor-85f778f7-fd2a-4858-9007-32cc71429dbd>,
+    <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#tractor-68d1921f-1236-41f0-8735-8edde4931e7f> .
+
+<https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#tractor-85f778f7-fd2a-4858-9007-32cc71429dbd>
+  a :Tractor, td:Thing;
+  td:title "A tractor that can be used for monitoring the moisture level of soil in a farm.";
+  td:hasSecurityConfiguration _:node12;
+  td:hasBase <http://localhost:1080/api/tractors/1/>;
+  td:hasActionAffordance _:node13;
+  hmas:hasProfile <https://raw.githubusercontent.com/Interactions-HSG/example-tds/was/tds/tractor1.ttl> .
+
+<https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#tractor-68d1921f-1236-41f0-8735-8edde4931e7f>
+  a :Tractor, td:Thing;
+  td:title "A tractor that can be used for irrigating sections in a farm.";
+  td:hasSecurityConfiguration _:node18;
+  td:hasBase <http://localhost:1080/api/tractors/2/>;
+  td:hasActionAffordance _:node19;
+  hmas:hasProfile <https://raw.githubusercontent.com/Interactions-HSG/example-tds/was/tds/tractor2.ttl> .
+
+_:node12 a <https://www.w3.org/2019/wot/security#NoSecurityScheme> .
+
+_:node13 a :ReadSoilMoistureAffordance, td:ActionAffordance;
+  td:name "Read Moisture Level";
+  td:hasForm _:node14;
+  td:hasInputSchema _:node15;
+  td:hasOutputSchema _:node17 .
+
+_:node15 a :Coordinates, <https://www.w3.org/2019/wot/json-schema#ArraySchema>;
+  <https://www.w3.org/2019/wot/json-schema#minItems> "4"^^xsd:int;
+  <https://www.w3.org/2019/wot/json-schema#maxItems> "4"^^xsd:int;
+  <https://www.w3.org/2019/wot/json-schema#items> _:node16 .
+
+_:node16 a <https://www.w3.org/2019/wot/json-schema#IntegerSchema>;
+  <https://www.w3.org/2019/wot/json-schema#minimum> "0"^^xsd:int;
+  <https://www.w3.org/2019/wot/json-schema#maximum> "2"^^xsd:int .
+
+_:node17 a :SoilMoisture, <https://www.w3.org/2019/wot/json-schema#IntegerSchema> .
+
+_:node18 a <https://www.w3.org/2019/wot/security#NoSecurityScheme> .
+
+_:node19 a :IrrigateAffordance, td:ActionAffordance;
+  td:name "Irrigate";
+  td:hasForm _:node20;
+  td:hasInputSchema _:node21 .
+
+_:node21 a :Coordinates, <https://www.w3.org/2019/wot/json-schema#ArraySchema>;
+  <https://www.w3.org/2019/wot/json-schema#minItems> "4"^^xsd:int;
+  <https://www.w3.org/2019/wot/json-schema#maxItems> "4"^^xsd:int;
+  <https://www.w3.org/2019/wot/json-schema#items> _:node22 .
+
+_:node22 a <https://www.w3.org/2019/wot/json-schema#IntegerSchema>;
+  <https://www.w3.org/2019/wot/json-schema#minimum> "0"^^xsd:int;
+  <https://www.w3.org/2019/wot/json-schema#maximum> "2"^^xsd:int .
+
+_:node14 <http://www.w3.org/2011/http#methodName> "GET";
+  <https://www.w3.org/2019/wot/hypermedia#hasTarget> <http://localhost:1080/api/tractors/1/moisture>;
+  <https://www.w3.org/2019/wot/hypermedia#forContentType> "application/json";
+  <https://www.w3.org/2019/wot/hypermedia#hasOperationType> td:invokeAction .
+
+_:node20 <http://www.w3.org/2011/http#methodName> "PUT";
+  <https://www.w3.org/2019/wot/hypermedia#hasTarget> <http://localhost:1080/api/tractors/2/sprayer>;
+  <https://www.w3.org/2019/wot/hypermedia#forContentType> "application/json";
+  <https://www.w3.org/2019/wot/hypermedia#hasOperationType> td:invokeAction .
+
+<https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#farm> :hasLandSection
+    <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section1>,
+    <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section2>,
+    <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section3>,
+    <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#section4> .
