@@ -1,7 +1,7 @@
 // moisture_detector agent
 
 // Add your graph repo location below
-repo_location("https://sandbox-graphdb.interactions.ics.unisg.ch/repositories/was-exercise-3-danai").
+repo_location("https://sandbox-graphdb.interactions.ics.unisg.ch/repositories/was-exercise-3-sandra").
 
 !start.
 
@@ -53,9 +53,9 @@ repo_location("https://sandbox-graphdb.interactions.ics.unisg.ch/repositories/wa
 
     !monitor_section(RemainingSections).
 
-+!check_moisture_sufficiency(Coordinates, RequireLevel, CurrentLevel) : RequiredLevel > CurrentLevel <-
++!check_moisture_sufficiency(Coordinates, RequiredLevel, CurrentLevel) : RequiredLevel > CurrentLevel <-
     .print("Detected low moisture in: ", Coordinates, ". Informing irrigator.");
     .send(irrigator, tell, low_moisture(Coordinates)).
 
-+!check_moisture_sufficiency(Coordinates, RequireLevel, CurrentLevel) : true <-
++!check_moisture_sufficiency(Coordinates, RequiredLevel, CurrentLevel) : true <-
     .print("Detected sufficient moisture in: ", Coordinates).
