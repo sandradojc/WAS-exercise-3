@@ -184,18 +184,16 @@ public class FarmKG extends Artifact {
 
     if (coordinatesBindings.size() > 0) {
         JsonObject binding = coordinatesBindings.get(0).getAsJsonObject();
-        String coordinate = binding.getAsJsonPrimitive("Coordinates").getAsString();
-        .
+        JsonObject coordinatesObject = binding.getAsJsonObject("Coordinates");
+        String coordinate = coordinatesObject.get("value").getAsString();
         String[] coordinateParts = coordinate.split(",");
         if (coordinateParts.length == 4) { 
             for (int i = 0; i < coordinateParts.length; i++) {
-                try {
-                    coordinatesValue[i] = Double.parseDouble(coordinateParts[i]);
-                } catch (NumberFormatException e) {
-                }
+                coordinatesValue[i] = Double.parseDouble(coordinateParts[i]);
             }
         }
     }
+    
 
         // sets the value of interest to the OpFeedbackParam
         coordinates.set(coordinatesValue);
