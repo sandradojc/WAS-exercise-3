@@ -44,15 +44,19 @@ public class FarmKG extends Artifact {
         // sets your variable name for the farm to be queried
         //String farmVariableName = "farm";
 
-        String farmVariableName = "farm-c3cecd1b-d37e-4ba5-8fe4-03defcf96f03";
+        String farmVariableName = "farm";
 
 
-        String queryStr = PREFIXES + "SELECT ?farm WHERE {\n" +
+        String queryStr = PREFIXES + "SELECT ?" + farmVariableName + 
+        " WHERE { GRAPH <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#> { ?" + farmVariableName + " a was:Farm. } }";
+        
+        /* 
+        "SELECT ?farm WHERE {\n" +
         "GRAPH <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#> {\n" +
         " bind <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-sandra#" + farmVariableName + "> a was:Farm.\n" +
         "}\n" +
         "}";
-
+*/
         //String queryStr = PREFIXES + "SELECT ?" + farmVariableName + " WHERE { ?" + farmVariableName + " a was:Farm. }";
 
         /* Example SPARQL query 
@@ -181,7 +185,7 @@ public class FarmKG extends Artifact {
     if (coordinatesBindings.size() > 0) {
         JsonObject binding = coordinatesBindings.get(0).getAsJsonObject();
         String coordinate = binding.getAsJsonPrimitive("Coordinates").getAsString();
-        
+        .
         String[] coordinateParts = coordinate.split(",");
         if (coordinateParts.length == 4) { 
             for (int i = 0; i < coordinateParts.length; i++) {
