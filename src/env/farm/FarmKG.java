@@ -42,9 +42,9 @@ public class FarmKG extends Artifact {
         String farmValue = null;
 
         // sets your variable name for the farm to be queried
-        String farmVariableName = "farm";
+        //String farmVariableName = "farm";
 
-        //String farmVariableName = "farm-c3cecd1b-d37e-4ba5-8fe4-03defcf96f03";
+        String farmVariableName = "farm-c3cecd1b-d37e-4ba5-8fe4-03defcf96f03";
 
 
         String queryStr = PREFIXES + "SELECT ?farm WHERE {\n" +
